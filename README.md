@@ -1,41 +1,20 @@
-### Library Management
+# Library Management
 
-Library Management System
+A Frappe v15 app to manage a library: articles, members, memberships and issue/return transactions.
 
-### Installation
+## Features
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+- Article, Library Member, Library Membership, Library Transaction, Library Settings (Single)
+- Membership validation (no overlapping active membership)
+- Issue/return validation (article availability, membership validity, max issued articles)
+- Librarian role with permissions
+- Public web view of published articles at /articles
 
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app library_management
-```
+## Setup
 
-### Contributing
-
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
-
-```bash
-cd apps/library_management
-pre-commit install
-```
-
-Pre-commit is configured to use the following tools for checking and formatting your code:
-
-- ruff
-- eslint
-- prettier
-- pyupgrade
-
-### CI
-
-This app can use GitHub Actions for CI. The following workflows are configured:
-
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
-
-
-### License
-
-mit
+1. bench init --frappe-branch version-15 frappe-bench-v15
+2. cd frappe-bench-v15
+3. bench new-site library.localhost
+4. bench get-app <repo-url>
+5. bench --site library.localhost install-app library_management
+6. bench start
