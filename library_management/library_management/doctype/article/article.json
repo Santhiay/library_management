@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "creation": "2026-11-18 11:52:58.903104",
  "doctype": "DocType",
@@ -12,7 +13,9 @@
   "isbn",
   "column_break_ihho",
   "status",
-  "publisher"
+  "publisher",
+  "published",
+  "route"
  ],
  "fields": [
   {
@@ -48,20 +51,35 @@
    "options": "Issued\nAvailable"
   },
   {
+   "fieldname": "author",
+   "fieldtype": "Data",
+   "label": "Author"
+  },
+  {
    "fieldname": "publisher",
    "fieldtype": "Data",
    "label": "Publisher"
   },
   {
-   "fieldname": "author",
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  },
+  {
+   "fieldname": "route",
    "fieldtype": "Data",
-   "label": "Author"
+   "label": "Route",
+   "read_only": 1,
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "links": [],
- "modified": "2026-11-18 16:25:53.855089",
+ "modified": "2026-11-18 16:32:35.347064",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",
@@ -92,6 +110,7 @@
    "write": 1
   }
  ],
+ "route": "articles",
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
