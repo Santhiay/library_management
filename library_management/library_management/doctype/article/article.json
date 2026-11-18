@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "article_name",
+  "author",
   "image",
   "description",
   "isbn",
@@ -50,12 +51,17 @@
    "fieldname": "publisher",
    "fieldtype": "Data",
    "label": "Publisher"
+  },
+  {
+   "fieldname": "author",
+   "fieldtype": "Data",
+   "label": "Author"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-11-18 11:54:45.079768",
+ "modified": "2026-11-18 14:57:08.059309",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",
